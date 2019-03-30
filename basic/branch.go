@@ -4,11 +4,12 @@ import (
 	"fmt"
 	"io/ioutil"
 )
-func grade(score int) string{
+
+func grade(score int) string {
 	g := ""
 	switch {
 	case score < 0 || score > 100:
-		panic(fmt.Sprintf("Wrong score :%d" ,score))
+		panic(fmt.Sprintf("Wrong score :%d", score))
 	case score < 60:
 		fmt.Println("F")
 		g = "F"
@@ -22,7 +23,7 @@ func grade(score int) string{
 }
 
 func main() {
-	const  filename = "abc.txt"
+	const filename = "abc.txt"
 
 	if contents, err := ioutil.ReadFile(filename); err != nil {
 		fmt.Println(err)
